@@ -1,7 +1,7 @@
 #include "core/system.h"
 
-int main()
-{
-	System().run();
-	return 0; 
+int main() {
+    OpacSystem app;
+    app.run();
+    return 0;
 }

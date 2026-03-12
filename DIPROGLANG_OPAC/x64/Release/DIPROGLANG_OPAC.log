@@ -1,0 +1,10 @@
+﻿  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 214 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  DIPROGLANG_OPAC.vcxproj -> C:\Users\Green\source\repos\Opac\x64\Release\DIPROGLANG_OPAC.exe
+  C:\Users\Green\Downloads\mysql-connector-c++-8.1.0-winx64\lib64\libcrypto-3-x64.dll
+  C:\Users\Green\Downloads\mysql-connector-c++-8.1.0-winx64\lib64\libssl-3-x64.dll
+  C:\Users\Green\Downloads\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn-9-vs14.dll
+  C:\Users\Green\Downloads\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll
+  4 File(s) copied
