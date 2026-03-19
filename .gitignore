@@ -11,6 +11,10 @@ obj/
 *.VC.db
 *.VC.opendb
 *.user
+*.sln
+*.slnx
+*.vcxproj
+*.vcxproj.filters
 
 # Compiled files
 *.obj
