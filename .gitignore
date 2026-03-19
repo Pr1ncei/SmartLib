@@ -19,12 +19,7 @@ obj/
 # Compiled files
 *.obj
 *.exe
-*.dll
-*.lib
 *.pdb
 
 # Sensitive files
 .env
-
-# ALWAYS Keep DLLs in lib (!!)
-!lib/*.dll
