@@ -6,7 +6,7 @@ Online Public Access Catalog (OPAC) Project in Partial Fullfillment of Design an
 Make sure you have the following installed before setting up the project:
 
 - [Visual Studio 2026 Community Edition](https://visualstudio.microsoft.com/downloads/)
-  *(Visual Studio 2022 may work, but is not officially supported yet)*  
+  *(Visual Studio 2022 and 2019 is also supported)*
 - [MySQL 8.0.45](https://dev.mysql.com/downloads/installer/)  
 - [Premake 5](https://premake.github.io/download/)  
 
