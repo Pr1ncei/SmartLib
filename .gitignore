@@ -1,13 +1,22 @@
-# Visual Studio temporary files
-.vs/
+# Build folders
 Debug/
 Release/
 x64/
+x86/
+build/
 
-# User-specific settings
-*.vcxproj.user
+# Visual Studio
+.vs/
+*.VC.db
+*.VC.opendb
+*.user
 
-# Build results
-*.exe
-*.pdb
+# Compiled files
 *.obj
+*.exe
+*.dll
+*.lib
+*.pdb
+
+# ALWAYS Keep DLLs in lib (!!)
+!lib/*.dll
