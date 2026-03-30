@@ -6,6 +6,7 @@ x86/
 bin/
 bin-int/
 moc/
+build/
 obj/ 
 
 # Visual Studio
