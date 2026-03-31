@@ -101,7 +101,7 @@ cd Opac
 
 2. Create a build folder and generate the solution:
 ```bash
-cmake -S . -B build -DCMAKE_PREFIX_PATH="F:/Qt/6.11.0/msvc2022_64"
+cmake -S . -B build -DCMAKE_PREFIX_PATH="path/to/Qt"
 ```
 
 3. Build the project:
