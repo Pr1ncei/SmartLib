@@ -219,17 +219,28 @@ void AdminWidget::loadBooks(const QString& filter)
             statusLbl->setAlignment(Qt::AlignCenter);
             bookTable_->setCellWidget(row, 5, statusLbl);
 
+            auto* editBtn = new QPushButton("Edit");
+            editBtn->setObjectName("BtnLink");
+            editBtn->setCursor(Qt::PointingHandCursor);
+
             // Delete button
             auto* deleteBtn = new QPushButton("Delete");
             deleteBtn->setObjectName("BadgeOut");
             deleteBtn->setCursor(Qt::PointingHandCursor);
-            bookTable_->setCellWidget(row, 6, deleteBtn);
-            int bookId = b.bookId;
-            connect(deleteBtn, &QPushButton::clicked, this, [=]() {
-                this->onDeleteBook(row);
-                });
 
-            // Store book ID
+            auto* actionWidget = new QWidget;
+            auto* actionLay = new QHBoxLayout(actionWidget);
+            actionLay->setContentsMargins(4, 2, 4, 2);
+            actionLay->setSpacing(4);
+            actionLay->addWidget(editBtn);
+            actionLay->addWidget(deleteBtn);
+            actionLay->addStretch();
+            bookTable_->setCellWidget(row, 6, actionWidget);
+
+            int capturedRow = row;
+            connect(editBtn, &QPushButton::clicked, this, [=] { onEditBook(capturedRow);   });
+            connect(deleteBtn, &QPushButton::clicked, this, [=] { onDeleteBook(capturedRow); });
+
             bookTable_->item(row, 0)->setData(Qt::UserRole, b.bookId);
         }
     }
