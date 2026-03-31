@@ -1,9 +1,29 @@
+/*
+    [SYSTEM IMPLEMENTATION]
+
+    @file: env.hpp
+    @author: Prince Pamintuan
+    @date: March 19,2026
+
+    @brief Custom file reader made for specifcally for .env files
+*/
+
 #pragma once
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <unordered_map>
 
+// Since there is no custom env file reader just like in Python
+// We decided to create one and use it to avoid putting hardcoded passwords in the source code
+// the env file must be placed in the root directory and
+// it is also required to connect to the sql database and asked during the installation
+
+// For implementation, we just create a map to store all of its contents
+// then, we loaded the file and check if it can access/open it 
+// If successful, it will start a loop to read each line and 
+// store key,value pair in the map 
+// If not, it will stop the application and outputs that it cannot be open
 inline std::unordered_map<std::string, std::string> loadEnv(
     const std::string& filename)
 {

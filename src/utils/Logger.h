@@ -1,9 +1,27 @@
+/*
+    [SYSTEM DESIGN/HEADER]
+
+    @file: Logger.h
+    @author: Matthew Green and Prince Pamintuan
+    @date: March 20,2026
+
+    @brief Records events during the program execution
+*/
+
 #pragma once
 #include <string>
 #include <fstream>
 #include <mutex>
 #include <ctime>
 
+// We made this along side with the Event Bus to make it easier
+// to debug and see all of the events that are going on while the 
+// GUI application is running
+
+// For now, we have three which is for:
+// info - like editing books
+// warning - two instances happening
+// error_l - can happen when there's a missing file that is required like env
 enum class LogLevel { INFO, WARNING, ERROR_L };
 
 class Logger

@@ -1,6 +1,16 @@
-﻿#include "../books/BookManager.h"
+﻿/*
+    [SYSTEM IMPLEMENTATION]
+
+    @file: BookManager.cpp
+    @author: Gil Miranda and Prince Pamintuan
+    @date: March 20,2026
+
+    @brief Implementation of the business logic for managing all books in the application
+*/
+
+#include "../books/BookManager.h"
 #include "../../utils/Logger.h"
-#include "../../utils/EventBus.h"
+#include "../../core/EventBus.h"
 #include <cppconn/prepared_statement.h>
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
@@ -38,8 +48,6 @@ std::vector<BookRow> BookManager::getAllBooks()
     }
     return books;
 }
-
-// ─── searchBooksGui ───────────────────────────────────────────────────────────
 
 std::vector<BookRow> BookManager::searchBooksGui(const std::string& keyword)
 {

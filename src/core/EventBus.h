@@ -1,3 +1,13 @@
+/*
+    [SYSTEM DESIGN/HEADER]
+
+    @file: system.h
+    @author: Matthew Green
+    @date: March 30,2026
+
+    @brief Creates an observer system for safe threading 
+*/
+
 #pragma once
 #include <string>
 #include <functional>
@@ -18,14 +28,12 @@ class EventBus
 {
 public:
     static EventBus& getInstance();
-
-    // Register a handler for a named event.
     void subscribe(const std::string& eventName, EventHandler handler);
 
-    // Fire an event — all subscribed handlers are called synchronously.
+    // Fire an event to the system
     void publish(const Event& event);
 
-    // Convenience overload: publish by name + payload string.
+    // Just for convenience, and another way to publish an event
     void publish(const std::string& name, const std::string& payload = "");
 
     EventBus(const EventBus&)            = delete;

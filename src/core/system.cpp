@@ -1,7 +1,17 @@
-﻿#include "System.h"
+﻿/*
+    [SYSTEM IMPLEMENTATION]
+
+    @file: system.cpp
+    @author: Matthew Green
+    @date: March 11,2026
+
+    @brief Acts as a controller for the whole SmartLib Application
+*/
+
+#include "System.h"
 #include "../ui/main_window.h"
 #include "../utils/Logger.h"
-#include "../utils/EventBus.h"
+#include "EventBus.h"
 #include <QApplication>
 #include <chrono>
 
@@ -16,6 +26,9 @@ System::~System()
     Logger::getInstance().info("=== OPAC System stopped ===");
 }
 
+// Runs/Initialize the QT Application and displays the window 
+// Just like how int main() works, it also uses argc and argv 
+// for it work. This is just a way to avoid CLI arguments. 
 void System::run()
 {
     startAuditThread();
@@ -30,6 +43,7 @@ void System::run()
 
     stopAuditThread();
 }
+
 
 void System::startAuditThread()
 {
@@ -49,6 +63,9 @@ void System::stopAuditThread()
     }
 }
 
+// Listens for events in the background to log it
+// Example, if the user tries to borrow or return the book, it observes it and logs it down.
+// We're using this to debug any problems that may happen during the application
 void System::auditLoop(std::atomic<bool>& running)
 {
     EventBus::getInstance().subscribe("BOOK_BORROWED", [](const Event& e) {

@@ -1,6 +1,6 @@
 ﻿#include "../borrow/BorrowManager.h"
 #include "../../utils/Logger.h"
-#include "../../utils/EventBus.h"
+#include "../../core/EventBus.h"
 #include <cppconn/prepared_statement.h>
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>

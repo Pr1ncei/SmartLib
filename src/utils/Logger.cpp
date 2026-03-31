@@ -1,4 +1,14 @@
-﻿#include "Logger.h"
+﻿/*
+    [SYSTEM DESIGN/HEADER]
+
+    @file: Logger.h
+    @author: Matthew Green and Prince Pamintuan
+    @date: March 20,2026
+
+    @brief Implementation of recording events during the program execution
+*/
+
+#include "Logger.h"
 #include <iostream>
 #include <iomanip>
 #include <sstream>

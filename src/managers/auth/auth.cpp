@@ -1,10 +1,28 @@
+/*
+    [SYSTEM IMPLEMENTATION]
+
+    @file: auth.cpp
+    @author: Jaz Angeles, Prince Pamintuan, and Matthew Green
+    @date: March 20,2026
+
+    @brief Implements the authentication system of SmartLib
+*/
+
 #include "auth.h"
 #include "../../utils/Logger.h"
-#include "../../utils/EventBus.h"
+#include "../../core/EventBus.h"
 #include <iostream>
 #include <cppconn/prepared_statement.h>
 
-// login
+// WARNING: The problem of this implementation is that it is unsecured.
+// The passwords are stored as plain text and anyone wiht the database access
+// can read all the passwords 
+// For future development, we suggest adding a password hashing like bcrypt 
+
+// It starts by establishing a connection for the SQL Database
+// Inputs the credentials and checks if it exists in the database with query
+// If successful, it checks the role (admin or user) to show the necessary screen
+// If not, create an instance that will show LOGIN FAIL and logs it
 Account AuthService::login(const std::string& username,
                            const std::string& password)
 {
@@ -44,7 +62,10 @@ Account AuthService::login(const std::string& username,
     }
 }
 
-// registerUser
+// It starts by establishing a connection for the SQL Database
+// Inputs the details for registration and add it to the database
+// It only has Username, Password, and Confirm Password during the create account screen
+// If error occurs, it usually an error in the database or the connection itself
 bool AuthService::registerUser(const std::string& username,
                                 const std::string& password,
                                 const std::string& role)
@@ -81,7 +102,7 @@ bool AuthService::registerUser(const std::string& username,
     }
 }
 
-// userExists
+// This is used for Logging in to the system by querying if it exists in the database 
 bool AuthService::userExists(const std::string& username)
 {
     try

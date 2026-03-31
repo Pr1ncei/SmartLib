@@ -1,3 +1,13 @@
+/*
+    [SYSTEM DESIGN/HEADER]
+
+    @file: auth.h
+    @author: Jaz Angeles, Prince Pamintuan, and Matthew Green
+    @date: March 20,2026
+
+    @brief The authentication system of SmartLib
+*/
+
 #pragma once
 #include <string>
 #include <cppconn/statement.h>
@@ -16,7 +26,6 @@ public:
                       const std::string& password,
                       const std::string& role = "user");
 
-    // Returns true if the username exists in the database.
     bool userExists(const std::string& username);
 
 private:

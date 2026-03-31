@@ -1,3 +1,13 @@
+/*
+    [SYSTEM IMPLEMENTATION]
+
+    @file: EventBus.cpp
+    @author: Matthew Green
+    @date: March 30,2026
+
+    @brief Creates an observer system for safe threading 
+*/
+
 #include "EventBus.h"
 
 EventBus& EventBus::getInstance()
@@ -6,6 +16,9 @@ EventBus& EventBus::getInstance()
     return instance;
 }
 
+// Similar to Youtube's subscribe feature, it's basically
+// listening for new events that happened and run it
+// This can have multiple instances of this function 
 void EventBus::subscribe(const std::string& eventName, EventHandler handler)
 {
     std::lock_guard<std::mutex> lock(mutex_);

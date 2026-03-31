@@ -29,7 +29,6 @@ MainWindow::MainWindow(QWidget* parent)
 
 void MainWindow::showAdmin(const QString& username)
 {
-    // Remove old admin widget if re-logging in
     if (adminWidget_) {
         stack_->removeWidget(adminWidget_);
         delete adminWidget_;
